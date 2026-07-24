@@ -7,42 +7,21 @@
   <title>Angelica Mae Hagape - Portfolio</title>
   <style>
     :root {
-      --bg: #faf9f7;
-      --bg2: #f3f0ed;
-      --bg3: #ede8e3;
-      --text: #2d2420;
-      --text2: #6b6159;
-      --text3: #a89f94;
-      --border: rgba(107, 97, 89, 0.08);
-      --border2: rgba(107, 97, 89, 0.12);
-      --primary: #c8956f;
-      --primary-light: #d9a986;
-      --accent1: #b89b7b;
-      --accent2: #8b9a8a;
-      --accent3: #9b8a7e;
-      --accent4: #a18d7f;
-      --success: #8b9a8a;
-      --danger: #c08070;
+      --bg: #1a1815;
+      --bg2: #252219;
+      --bg3: #302b24;
+      --text: #f5f1ed;
+      --text2: #c9bfb5;
+      --text3: #8b8178;
+      --border: rgba(245, 241, 237, 0.08);
+      --border2: rgba(245, 241, 237, 0.12);
+      --primary: #d4a574;
+      --primary-light: #e0b588;
+      --accent1: #c4a98a;
+      --accent2: #9bb39d;
+      --accent3: #b4927f;
+      --accent4: #a89678;
       --radius: 12px;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #1a1815;
-        --bg2: #252219;
-        --bg3: #302b24;
-        --text: #f5f1ed;
-        --text2: #c9bfb5;
-        --text3: #8b8178;
-        --border: rgba(245, 241, 237, 0.08);
-        --border2: rgba(245, 241, 237, 0.12);
-        --primary: #d4a574;
-        --primary-light: #e0b588;
-        --accent1: #c4a98a;
-        --accent2: #9bb39d;
-        --accent3: #b4927f;
-        --accent4: #a89678;
-      }
     }
 
     * {
@@ -146,6 +125,13 @@
     /* Sections */
     .section {
       margin-bottom: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section:last-of-type {
+      border-bottom: none;
+      padding-bottom: 0;
     }
 
     .section-title {
