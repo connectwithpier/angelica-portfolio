@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark light">
+  <title>Angelica Mae Hagape - Portfolio</title>
+  <style>
+    :root {
+      --bg: #0f1419;
+      --bg2: #1a1f2e;
+      --bg3: #252d3d;
+      --text: #f0f4f8;
+      --text2: #b4bcc8;
+      --text3: #7a8496;
+      --border: rgba(255, 255, 255, 0.08);
+      --border2: rgba(255, 255, 255, 0.15);
+      --primary: #6366f1;
+      --primary-light: #818cf8;
+      --accent1: #ec4899;
+      --accent2: #06b6d4;
+      --accent3: #10b981;
+      --accent4: #f59e0b;
+      --success: #10b981;
+      --danger: #ef4444;
+      --radius: 12px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #fafbfc;
+        --bg2: #f3f4f6;
+        --bg3: #e5e7eb;
+        --text: #1f2937;
+        --text2: #4b5563;
+        --text3: #9ca3af;
+        --border: rgba(0, 0, 0, 0.08);
+        --border2: rgba(0, 0, 0, 0.15);
+      }
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    /* Header/Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 32px;
+      align-items: start;
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-photo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 3px solid var(--primary);
+      box-shadow: 0 8px 24px rgba(99, 102, 241, 0.2);
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-content h1 {
+      font-size: 32px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, var(--primary), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-content .title {
+      font-size: 18px;
+      color: var(--text2);
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    .hero-content .about {
+      font-size: 14px;
+      color: var(--text2);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      background: var(--bg2);
+      border: 1px solid var(--border2);
+      border-radius: 6px;
+      text-decoration: none;
+      color: var(--text2);
+      font-size: 13px;
+      transition: all 0.3s ease;
+    }
+
+    .contact-link:hover {
+      background: var(--bg3);
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 48px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--primary);
+      display: inline-block;
+    }
+
+    /* Skills Grid */
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .skill-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skill-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--accent2));
+    }
+
+    .skill-card:nth-child(2)::before {
+      background: linear-gradient(90deg, var(--accent1), var(--accent2));
+    }
+
+    .skill-card:nth-child(3)::before {
+      background: linear-gradient(90deg, var(--accent3), var(--primary));
+    }
+
+    .skill-card:nth-child(4)::before {
+      background: linear-gradient(90deg, var(--accent4), var(--accent1));
+    }
+
+    .skill-card:nth-child(5)::before {
+      background: linear-gradient(90deg, var(--accent2), var(--accent3));
+    }
+
+    .skill-card:nth-child(6)::before {
+      background: linear-gradient(90deg, var(--primary), var(--accent4));
+    }
+
+    .skill-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(99, 102, 241, 0.1);
+    }
+
+    .skill-icon {
+      font-size: 28px;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .skill-name {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .skill-desc {
+      font-size: 13px;
+      color: var(--text3);
+      line-height: 1.6;
+    }
+
+    /* Experience Timeline */
+    .experience-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 24px;
+      margin-bottom: 28px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .experience-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .experience-date {
+      font-size: 13px;
+      color: var(--text3);
+      font-weight: 500;
+    }
+
+    .experience-content h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+
+    .experience-company {
+      font-size: 13px;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .experience-description {
+      font-size: 13px;
+      color: var(--text2);
+      line-height: 1.6;
+    }
+
+    /* Certificates */
+    .certificates-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .certificate-item {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .certificate-item:hover {
+      border-color: var(--primary);
+      transform: scale(1.02);
+      box-shadow: 0 12px 24px rgba(99, 102, 241, 0.15);
+    }
+
+    .certificate-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background: var(--bg3);
+    }
+
+    .certificate-name {
+      padding: 12px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text2);
+      text-align: center;
+    }
+
+    /* Contact Form */
+    .contact-form {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      max-width: 600px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group:last-child {
+      margin-bottom: 0;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid var(--border2);
+      border-radius: 6px;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 13px;
+      font-family: inherit;
+      transition: all 0.3s ease;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 12px 20px;
+      background: linear-gradient(135deg, var(--primary), var(--accent2));
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(99, 102, 241, 0.3);
+    }
+
+    .submit-btn:active {
+      transform: translateY(0);
+    }
+
+    .form-message {
+      padding: 12px 16px;
+      border-radius: 6px;
+      margin-top: 16px;
+      font-size: 13px;
+      display: none;
+    }
+
+    .form-message.success {
+      display: block;
+      background: rgba(16, 185, 129, 0.1);
+      color: var(--success);
+      border: 1px solid var(--success);
+    }
+
+    .form-message.error {
+      display: block;
+      background: rgba(239, 68, 68, 0.1);
+      color: var(--danger);
+      border: 1px solid var(--danger);
+    }
+
+    /* Languages */
+    .languages-list {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .language-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      background: var(--bg2);
+      border: 1px solid var(--border2);
+      border-radius: 20px;
+      font-size: 13px;
+      color: var(--text2);
+    }
+
+    .language-badge::before {
+      content: '🌐';
+      font-size: 14px;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .hero-photo {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+      }
+
+      .hero-content h1 {
+        font-size: 24px;
+      }
+
+      .skills-container {
+        grid-template-columns: 1fr;
+      }
+
+      .experience-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .contact-form {
+        padding: 20px;
+      }
+
+      .section-title {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Hero Section -->
+    <div class="hero">
+      <div class="hero-photo">
+        <img src="Angge.webp" alt="Angelica Mae Hagape">
+      </div>
+      <div class="hero-content">
+        <h1>Angelica Mae Hagape</h1>
+        <div class="title">Senior Analyst | BPO Specialist</div>
+
+        <div class="about">
+          <p>Detail-oriented Senior Analyst with 8+ years of experience in customer service, fraud detection, and business process operations. Proven ability to lead teams, solve complex problems, and deliver exceptional results in fast-paced environments. Passionate about process improvement and customer satisfaction.</p>
+        </div>
+
+        <div class="contact-links">
+          <a href="mailto:angge.hagape@yahoo.com" class="contact-link">
+            <span>📧</span>
+            <span>Email</span>
+          </a>
+          <a href="tel:09054214269" class="contact-link">
+            <span>📱</span>
+            <span>Phone</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Skills Section -->
+    <div class="section">
+      <h2 class="section-title">Core Skills</h2>
+      <div class="skills-container">
+        <div class="skill-card">
+          <span class="skill-icon">🧠</span>
+          <div class="skill-name">Critical Thinking</div>
+          <div class="skill-desc">Analytical problem-solving and logical reasoning to identify root causes and implement effective solutions.</div>
+        </div>
+        <div class="skill-card">
+          <span class="skill-icon">💬</span>
+          <div class="skill-name">Communication</div>
+          <div class="skill-desc">Clear and professional communication across all levels, both written and verbal interactions.</div>
+        </div>
+        <div class="skill-card">
+          <span class="skill-icon">✨</span>
+          <div class="skill-name">Creative Thinking</div>
+          <div class="skill-desc">Innovative approach to challenges, generating unique solutions and improving processes.</div>
+        </div>
+        <div class="skill-card">
+          <span class="skill-icon">🛠️</span>
+          <div class="skill-name">Technical Troubleshooting</div>
+          <div class="skill-desc">Proficient in diagnosing and resolving technical issues using specialized tools and methodologies.</div>
+        </div>
+        <div class="skill-card">
+          <span class="skill-icon">✅</span>
+          <div class="skill-name">Quality Assurance</div>
+          <div class="skill-desc">Meticulous attention to detail ensuring high-quality deliverables and compliance with standards.</div>
+        </div>
+        <div class="skill-card">
+          <span class="skill-icon">🔍</span>
+          <div class="skill-name">Fraud Detection</div>
+          <div class="skill-desc">Expert in identifying suspicious activities and implementing preventive measures for risk mitigation.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Professional Experience -->
+    <div class="section">
+      <h2 class="section-title">Professional Experience</h2>
+
+      <div class="experience-item">
+        <div class="experience-date">2023 - Present</div>
+        <div class="experience-content">
+          <h3>Senior Analyst</h3>
+          <div class="experience-company">HCL | BPO/Call Center</div>
+          <div class="experience-description">
+            Senior-level technical analyst specializing in troubleshooting, process optimization, and quality assurance. Acting as point of contact for complex operational issues.
+          </div>
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <div class="experience-date">2021 - 2023</div>
+        <div class="experience-content">
+          <h3>Fraud And Claims Assistant</h3>
+          <div class="experience-company">Wells Fargo</div>
+          <div class="experience-description">
+            Subject matter expert in fraud detection and claims processing. Identified suspicious patterns and provided QA support for regulatory compliance.
+          </div>
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <div class="experience-date">2020 - 2021</div>
+        <div class="experience-content">
+          <h3>Customer Service Trainee</h3>
+          <div class="experience-company">Sykes | Technical Customer Service</div>
+          <div class="experience-description">
+            Technical support specialist handling customer inquiries and troubleshooting issues. Developed expertise in basic and advanced technical support.
+          </div>
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <div class="experience-date">2019 - 2020</div>
+        <div class="experience-content">
+          <h3>Customer Service Representative</h3>
+          <div class="experience-company">Teleperformance | Customer Service</div>
+          <div class="experience-description">
+            Handled hotel booking inquiries and provided exceptional customer service with high satisfaction ratings.
+          </div>
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <div class="experience-date">2018 - 2018</div>
+        <div class="experience-content">
+          <h3>Customer Service Representative</h3>
+          <div class="experience-company">IBEX | Billing & Technical Support</div>
+          <div class="experience-description">
+            Provided comprehensive billing and technical support. Achieved "Best in Lowest AHT" award in 2018.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Languages -->
+    <div class="section">
+      <h2 class="section-title">Languages</h2>
+      <div class="languages-list">
+        <div class="language-badge">Filipino (Native)</div>
+        <div class="language-badge">English (Fluent)</div>
+      </div>
+    </div>
+
+    <!-- Certificates Section -->
+    <div class="section">
+      <h2 class="section-title">Certifications & Portfolio</h2>
+      <div class="certificates-grid">
+        <div class="certificate-item">
+          <img src="https://cdn.jobs180.com/jobseekers/portfolios/31de978515fade6922d73b87f5baec4a.jpg" alt="Certificate 1">
+          <div class="certificate-name">Professional Certification</div>
+        </div>
+        <div class="certificate-item">
+          <img src="https://cdn.jobs180.com/jobseekers/portfolios/5aa60fe2e8acafa6c346855fef048bba.jpg" alt="Certificate 2">
+          <div class="certificate-name">Achievement Award</div>
+        </div>
+        <div class="certificate-item">
+          <img src="https://cdn.jobs180.com/jobseekers/portfolios/2d5b672ce9e1a5063d6d3e7d8ecdc88a.jpg" alt="Certificate 3">
+          <div class="certificate-name">Training Certificate</div>
+        </div>
+        <div class="certificate-item">
+          <img src="https://cdn.jobs180.com/jobseekers/portfolios/90adc66001865c59e829685f30410e26.jpg" alt="Certificate 4">
+          <div class="certificate-name">Skill Verification</div>
+        </div>
+        <div class="certificate-item">
+          <img src="https://cdn.jobs180.com/jobseekers/portfolios/acc6ed77c2b99eacd7232ac70f2ea977.jpg" alt="Certificate 5">
+          <div class="certificate-name">Performance Award</div>
+        </div>
+        <div class="certificate-item">
+          <img src="https://cdn.jobs180.com/jobseekers/portfolios/d8533c9b7ffd0edb2d076e52066cc750.jpg" alt="Certificate 6">
+          <div class="certificate-name">Professional Development</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="section">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="contact-form">
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject *</label>
+            <input type="text" id="subject" name="subject" placeholder="Job opportunity, collaboration, or inquiry" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Send Message</button>
+          <div class="form-message" id="formMessage"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+
+      const mailtoLink = `mailto:angge.hagape@yahoo.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`)}`;
+
+      window.location.href = mailtoLink;
+
+      const messageEl = document.getElementById('formMessage');
+      messageEl.textContent = 'Opening email client...';
+      messageEl.classList.add('success');
+      messageEl.classList.remove('error');
+
+      setTimeout(() => {
+        document.getElementById('contactForm').reset();
+        messageEl.classList.remove('success');
+      }, 3000);
+    });
+  </script>
+</body>
+</html>
