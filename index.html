@@ -7,35 +7,41 @@
   <title>Angelica Mae Hagape - Portfolio</title>
   <style>
     :root {
-      --bg: #0f1419;
-      --bg2: #1a1f2e;
-      --bg3: #252d3d;
-      --text: #f0f4f8;
-      --text2: #b4bcc8;
-      --text3: #7a8496;
-      --border: rgba(255, 255, 255, 0.08);
-      --border2: rgba(255, 255, 255, 0.15);
-      --primary: #6366f1;
-      --primary-light: #818cf8;
-      --accent1: #ec4899;
-      --accent2: #06b6d4;
-      --accent3: #10b981;
-      --accent4: #f59e0b;
-      --success: #10b981;
-      --danger: #ef4444;
+      --bg: #faf9f7;
+      --bg2: #f3f0ed;
+      --bg3: #ede8e3;
+      --text: #2d2420;
+      --text2: #6b6159;
+      --text3: #a89f94;
+      --border: rgba(107, 97, 89, 0.08);
+      --border2: rgba(107, 97, 89, 0.12);
+      --primary: #c8956f;
+      --primary-light: #d9a986;
+      --accent1: #b89b7b;
+      --accent2: #8b9a8a;
+      --accent3: #9b8a7e;
+      --accent4: #a18d7f;
+      --success: #8b9a8a;
+      --danger: #c08070;
       --radius: 12px;
     }
 
-    @media (prefers-color-scheme: light) {
+    @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #fafbfc;
-        --bg2: #f3f4f6;
-        --bg3: #e5e7eb;
-        --text: #1f2937;
-        --text2: #4b5563;
-        --text3: #9ca3af;
-        --border: rgba(0, 0, 0, 0.08);
-        --border2: rgba(0, 0, 0, 0.15);
+        --bg: #1a1815;
+        --bg2: #252219;
+        --bg3: #302b24;
+        --text: #f5f1ed;
+        --text2: #c9bfb5;
+        --text3: #8b8178;
+        --border: rgba(245, 241, 237, 0.08);
+        --border2: rgba(245, 241, 237, 0.12);
+        --primary: #d4a574;
+        --primary-light: #e0b588;
+        --accent1: #c4a98a;
+        --accent2: #9bb39d;
+        --accent3: #b4927f;
+        --accent4: #a89678;
       }
     }
 
@@ -46,11 +52,12 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.7;
       font-size: 15px;
+      letter-spacing: 0.3px;
     }
 
     /* Layout */
@@ -77,8 +84,8 @@
       border-radius: 50%;
       overflow: hidden;
       flex-shrink: 0;
-      border: 3px solid var(--primary);
-      box-shadow: 0 8px 24px rgba(99, 102, 241, 0.2);
+      border: 2px solid var(--primary);
+      box-shadow: 0 12px 32px rgba(200, 149, 111, 0.15);
     }
 
     .hero-photo img {
@@ -88,13 +95,11 @@
     }
 
     .hero-content h1 {
-      font-size: 32px;
-      font-weight: 600;
+      font-size: 36px;
+      font-weight: 700;
       margin-bottom: 8px;
-      background: linear-gradient(135deg, var(--primary), var(--accent2));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--text);
+      letter-spacing: -0.5px;
     }
 
     .hero-content .title {
@@ -145,11 +150,12 @@
 
     .section-title {
       font-size: 20px;
-      font-weight: 600;
+      font-weight: 700;
       margin-bottom: 24px;
       padding-bottom: 12px;
       border-bottom: 2px solid var(--primary);
       display: inline-block;
+      letter-spacing: -0.3px;
     }
 
     /* Skills Grid */
@@ -164,7 +170,7 @@
       background: var(--bg2);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 20px;
+      padding: 24px;
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
@@ -176,34 +182,34 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--primary), var(--accent2));
+      height: 2px;
+      background: var(--primary);
     }
 
     .skill-card:nth-child(2)::before {
-      background: linear-gradient(90deg, var(--accent1), var(--accent2));
+      background: var(--accent2);
     }
 
     .skill-card:nth-child(3)::before {
-      background: linear-gradient(90deg, var(--accent3), var(--primary));
+      background: var(--accent1);
     }
 
     .skill-card:nth-child(4)::before {
-      background: linear-gradient(90deg, var(--accent4), var(--accent1));
+      background: var(--accent3);
     }
 
     .skill-card:nth-child(5)::before {
-      background: linear-gradient(90deg, var(--accent2), var(--accent3));
+      background: var(--accent2);
     }
 
     .skill-card:nth-child(6)::before {
-      background: linear-gradient(90deg, var(--primary), var(--accent4));
+      background: var(--accent4);
     }
 
     .skill-card:hover {
-      border-color: var(--primary);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 24px rgba(99, 102, 241, 0.1);
+      border-color: var(--border2);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(107, 97, 89, 0.08);
     }
 
     .skill-icon {
@@ -284,9 +290,9 @@
     }
 
     .certificate-item:hover {
-      border-color: var(--primary);
-      transform: scale(1.02);
-      box-shadow: 0 12px 24px rgba(99, 102, 241, 0.15);
+      border-color: var(--border2);
+      transform: scale(1.01);
+      box-shadow: 0 8px 20px rgba(107, 97, 89, 0.1);
     }
 
     .certificate-item img {
@@ -346,7 +352,7 @@
     textarea:focus {
       outline: none;
       border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+      box-shadow: 0 0 0 3px rgba(200, 149, 111, 0.08);
     }
 
     textarea {
@@ -357,7 +363,7 @@
     .submit-btn {
       width: 100%;
       padding: 12px 20px;
-      background: linear-gradient(135deg, var(--primary), var(--accent2));
+      background: var(--primary);
       color: white;
       border: none;
       border-radius: 6px;
@@ -368,8 +374,9 @@
     }
 
     .submit-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 16px rgba(99, 102, 241, 0.3);
+      background: var(--primary-light);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(200, 149, 111, 0.2);
     }
 
     .submit-btn:active {
